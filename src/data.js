@@ -2,21 +2,14 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, setPersistence, browserSessionPersistence } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 import { getFirestore, collection, doc, onSnapshot, runTransaction, serverTimestamp, deleteDoc } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 import { firebaseConfig, ADMIN_UID } from './firebase-config.js';
-<<<<<<< HEAD
-import { getStorage, ref, uploadBytes, getBlob } from 'firebase/storage';
+import { getStorage, ref, uploadBytes, getBlob } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js';
 import { validateMember, validatePayment, renewExpiry, validatePlan, DEFAULT_PLANS } from './logic.js';
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const storage=getStorage(app);
-=======
-import { validateMember, validatePayment, renewExpiry } from './logic.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app);
 
->>>>>>> 5062899f6b9ad9f85ad35417e8c90d91dbc29773
 function guard(){if(auth.currentUser?.uid!==ADMIN_UID)throw new Error('Bạn không có quyền quản lý.');if(!navigator.onLine)throw new Error('Đang ngoại tuyến. Kết nối mạng rồi thử lại.');}
 export const watchAuth = fn => onAuthStateChanged(auth, async user => { if(user && user.uid !== ADMIN_UID){await signOut(auth);fn(null,'Tài khoản này không được cấp quyền quản lý.');}else fn(user); });
 export async function login(email,password){await setPersistence(auth,browserSessionPersistence);const result=await signInWithEmailAndPassword(auth,email,password);if(result.user.uid!==ADMIN_UID){await signOut(auth);throw new Error('Tài khoản này không được cấp quyền quản lý.');}}

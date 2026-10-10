@@ -1,5 +1,5 @@
 import './styles.css';
-import { createIcons, Dumbbell, ArrowRight, ShieldCheck, Eye, LayoutDashboard, Users, Bell, Wallet, Settings2, LogOut, Plus, FlaskConical, BadgeCheck, Clock3, TriangleAlert, BellRing, ArrowUpRight, Search, Ellipsis, ChevronLeft, ChevronRight, X, Trash2 } from 'lucide';
+import { createIcons, Dumbbell, ArrowRight, ShieldCheck, Eye, LayoutDashboard, Users, Bell, Wallet, Settings2, LogOut, Plus, FlaskConical, BadgeCheck, Clock3, TriangleAlert, BellRing, ArrowUpRight, Search, Ellipsis, ChevronLeft, ChevronRight, X, Trash2 } from 'https://cdn.jsdelivr.net/npm/lucide@0.468.0/+esm';
 const icons = { Dumbbell, ArrowRight, ShieldCheck, Eye, LayoutDashboard, Users, Bell, Wallet, Settings2, LogOut, Plus, FlaskConical, BadgeCheck, Clock3, TriangleAlert, BellRing, ArrowUpRight, Search, Ellipsis, ChevronLeft, ChevronRight, X, Trash2 };
 import { today, TZ, addDays, addMonths, daysLeft, status, LABELS, formatDate, money, filterMembers, validateMember, validatePayment, renewExpiry } from './logic.js';
 import { analytics, changeReport, packageView, planOptions, packageFields, planFormMarkup, cleanPlan, photoMarkup, attachPhoto } from './features.js';
